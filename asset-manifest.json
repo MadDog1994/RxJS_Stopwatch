@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/Stopwatch/static/css/main.62345144.css",
-    "main.js": "/Stopwatch/static/js/main.590528fb.js",
-    "static/js/787.28cb0dcd.chunk.js": "/Stopwatch/static/js/787.28cb0dcd.chunk.js",
-    "static/media/cosmos.jpg": "/Stopwatch/static/media/cosmos.60d8cb5667e81c40b2ee.jpg",
-    "index.html": "/Stopwatch/index.html",
-    "main.62345144.css.map": "/Stopwatch/static/css/main.62345144.css.map",
-    "main.590528fb.js.map": "/Stopwatch/static/js/main.590528fb.js.map",
-    "787.28cb0dcd.chunk.js.map": "/Stopwatch/static/js/787.28cb0dcd.chunk.js.map"
+    "main.css": "/Timer_RxJS/static/css/main.400b8e5d.css",
+    "main.js": "/Timer_RxJS/static/js/main.3671dacc.js",
+    "static/js/787.28cb0dcd.chunk.js": "/Timer_RxJS/static/js/787.28cb0dcd.chunk.js",
+    "index.html": "/Timer_RxJS/index.html",
+    "main.400b8e5d.css.map": "/Timer_RxJS/static/css/main.400b8e5d.css.map",
+    "main.3671dacc.js.map": "/Timer_RxJS/static/js/main.3671dacc.js.map",
+    "787.28cb0dcd.chunk.js.map": "/Timer_RxJS/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.62345144.css",
-    "static/js/main.590528fb.js"
+    "static/css/main.400b8e5d.css",
+    "static/js/main.3671dacc.js"
   ]
 }
