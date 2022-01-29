@@ -1,35 +1,28 @@
-import React, { useState, useEffect } from 'react';
-import './stopwatch.css';
+import React, { useEffect, useState } from "react";
 
-export default function Stopwatch(props) {
-    const {time, autostart, step} = props;
-    const [seconds, setSeconds] = useState(time)
-    const [timeOn, setTimeOn] = useState(autostart)
+const Stopwatch = (props) => {
+  const [hours, setHours] = useState(0);
+  const [minutes, setMinutes] = useState(0);
+  const [seconds, setSeconds] = useState(0);
 
-    useEffect(() => {
-        let interval = null;
+  useEffect(() => {
+    let hours = Math.floor(props.timePassed / 3600);
+    setHours(() => (hours.toString().length === 1 ? "0" : "") + hours);
 
-        if (timeOn) {
-            interval = setInterval(() => {
-                setSeconds(prevTime => prevTime + step)
-            }, 1000)
-        }
-        return () => clearInterval(interval)
-    }, [seconds, timeOn])
+    let minutes = Math.floor((props.timePassed % 3600) / 60);
+    setMinutes(() => (minutes.toString().length === 1 ? "0" : "") + minutes);
 
-    return (
-        <div className={'container'}>
-            <div className={'table'}>
-                <span className={'num-style'}>{("0" + Math.floor((seconds / 3600000) % 60)).slice(-2)}:</span>
-                <span className={'num-style'}>{("0" + Math.floor((seconds / 60000) % 60)).slice(-2)}:</span>
-                <span className={'num-style'}>{("0" + Math.floor((seconds / 1000) % 60)).slice(-2)}</span>
-            </div>
-            <div className={'button-position'}>
-            <button onClick={() => setTimeOn(true)}>Start</button>
-            <button onClick={() => setSeconds(time) || setTimeOn(false)}>Stop</button>
-            <button onClick={() => setSeconds(time) || setTimeOn(true)}>Reset</button>
-            <button onDoubleClick={() => setTimeOn(false)}>Wait</button>
-            </div>
-        </div>
-    )
+    let seconds = props.timePassed % 60;
+    setSeconds(() => (seconds.toString().length === 1 ? "0" : "") + seconds);
+  }, [props.timePassed]);
+
+  return (
+    <>
+      <h3>
+        {hours}:{minutes}:{seconds}
+      </h3>
+    </>
+  );
 };
+
+export default Stopwatch;
